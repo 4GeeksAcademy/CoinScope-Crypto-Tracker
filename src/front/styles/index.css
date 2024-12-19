@@ -2,6 +2,10 @@
     General Styles used on every website (Don't Repeat Yourself)
 */
 
+body{
+  background: black;
+}
+
 #layout {
   height: 100%;
   display: flex;
@@ -308,7 +312,7 @@
 .previewBox {
   margin: 4vh auto;
   display: flex;
-  height: 550px;
+  height: 700px;
   scale: 0.1;
   opacity: 0;
   animation: fade-in linear forwards;
@@ -318,8 +322,8 @@
 }
 
 .previewPhoto {
-  height: 550px;
-  width: 450px;
+  height: 600px;
+  width: 900px;
   box-shadow: 0px 0px 55px 10px #39ff14;
   border-radius: 5%;
   margin-left: 50px;
@@ -979,20 +983,7 @@ h1 {
   color: #39ff14;
 }
 
-.bookmark-button {
-  background: transparent;
-  border: 2px solid#39ff14;; /* Green border */
-  border-radius: 50%;
-  padding: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 40px;
-  height: 40px;
-  position: relative;
-}
+
 
 .bookmark-button {
   background: transparent;
@@ -1372,9 +1363,7 @@ td canvas {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-<<<<<<< HEAD
 /* ABOUT US */
-=======
 
 /* Alerts List Section */
 .alerts-list {
@@ -1435,7 +1424,6 @@ td canvas {
 
 
 /* ABOUT US */ 
->>>>>>> 0e55996f246c407a1696139b6613f0cd5e6241a3
 
 .about {
   max-width: 800px; /* Limit width for better readability */

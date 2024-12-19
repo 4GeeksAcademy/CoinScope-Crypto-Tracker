@@ -2,15 +2,14 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import Listing from "../../img/listing.png";
-import currency from "../../img/currency.png";
-import favorite from "../../img/Favorites.png";
-import wallet from "../../img/wallet.png";
-import snapshot from "../../img/snapshot.png";
-import crypto from "../../img/crypto.png";
+import Listing from "../../img/1.png";
+import currency from "../../img/4.png";
+import wallet from "../../img/5.png";
+import snapshot from "../../img/3.png";
+import crypto from "../../img/2.png";
 
 export const Landing = () => {
-    const { store } = useContext(Context);
+    const { store, actions } = useContext(Context);
     const navigate = useNavigate();
 
     const handleUnauthorizedAction = (actionName) => {
@@ -38,10 +37,10 @@ export const Landing = () => {
                         Explore Database
                     </span>
                 </div>
-                <img src={Listing} alt="Listing" className="d-inline-block align-top" />
+                <img src={Listing} alt="Listing" className="d-inline-block align-top previewPhoto" />
             </div>
             <div className="previewBox" id="perfPreview">
-                <img src={crypto} alt="crypto" className="d-inline-block align-top" />
+                <img src={crypto} alt="crypto" className="d-inline-block align-top previewPhoto" />
                 <div className="blurbContainer">
                     <div className="blurb">
                         Upon logging in immediately see the most important thing: the overall
@@ -51,7 +50,7 @@ export const Landing = () => {
                         className="listingLogin btn"
                         onClick={() => {
                             if (handleUnauthorizedAction("view performance")) return;
-                            navigate("/userdashboard");
+                            navigate("/overall_holdings");
                         }}
                     >
                         View Performance
@@ -75,10 +74,10 @@ export const Landing = () => {
                         Find Tokens
                     </span>
                 </div>
-                <img src={snapshot} alt="snapshot" className="d-inline-block align-top" />
+                <img src={snapshot} alt="snapshot" className="d-inline-block align-top previewPhoto" />
             </div>
             <div className="previewBox" id="favPreview">
-                <img src={currency} alt="currency" className="d-inline-block align-top" />
+                <img src={currency} alt="currency" className="d-inline-block align-top previewPhoto" />
                 <div className="blurbContainer">
                     <div className="blurb">
                         Add coins to your favorites list for easy access and tracking, and the ability
@@ -111,7 +110,7 @@ export const Landing = () => {
                         Open Wallet
                     </span>
                 </div>
-                <img src={wallet} alt="wallet" className="d-inline-block align-top" />
+                <img src={wallet} alt="wallet" className="d-inline-block align-top previewPhoto" />
             </div>
         </div>
     );

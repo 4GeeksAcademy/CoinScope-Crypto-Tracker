@@ -17,7 +17,7 @@ export const OverallHoldings = () => {
         }
         )))
         setTotalReturn((((store.walletReturnsData[store.walletReturnsData.length - 1].price - store.walletReturnsData[0].price) / store.walletReturnsData[0].price) * 100).toFixed(2))
-    }, [])
+    }, [store.walletReturnsData])
 
     return (
         <div id="overallHoldings">

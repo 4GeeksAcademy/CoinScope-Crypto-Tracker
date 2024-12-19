@@ -790,6 +790,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             checkAlerts: () => {
                 const store = getStore();
                 const triggeredAlerts = [];
+                console.log("Check alert");
 
                 // Check all alerts
                 store.alerts.forEach((alert) => {
@@ -805,11 +806,30 @@ const getState = ({ getStore, getActions, setStore }) => {
                     }
                 });
 
+
                 if (triggeredAlerts.length > 0) {
                     triggeredAlerts.forEach((triggeredAlert) => {
+
+                        fetch(process.env.BACKEND_URL + "alert/check", {
+                            method: 'POST',
+                            body: JSON.stringify(
+                                { msg: "Alert has been triggered" }
+                            ),
+                            headers: {
+                                'Content-type': 'application/json'
+                            }
+                        })
+                            .then(res => {
+                                if (!res.ok) throw Error(res.statusText);
+                                return res.json();
+                            })
+                            .then(response => console.log(response))
+                            .catch(error => console.error(error));
+
                         window.alert(
                             `Price Alert! ${triggeredAlert.coin_name} has reached $${triggeredAlert.target_price}`
                         );
+
                     });
 
 

@@ -42,7 +42,7 @@ const Layout = () => {
                     <ContactUs />
                     <TradeModal />
                     <Routes>
-                        <Route element={<Landing />} exact path="/" />
+                        <Route element={<Landing />} path="/landingpage" />
                         <Route element={<AboutUs />} path="/about" />
                         <Route element={<Listing />} path="/listingpage" />
                         <Route element={<Userdashboard />} path="/userdashboard" />

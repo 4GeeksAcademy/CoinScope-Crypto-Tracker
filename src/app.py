@@ -12,6 +12,7 @@ from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
 from flask_mail import Mail, Message
+from sms import send_SMS
 
 
 
@@ -361,6 +362,17 @@ def update_profile(user_id):
     return jsonify(
         {"message": "Profile updated successfully", "profile": user.serialize()}
         ), 200
+
+
+
+
+@app.route("/alert/check", methods=["POST"])
+def send_alert():
+    msg = request.json['msg']
+
+    send_SMS(msg)
+    return jsonify("Message sent:" +  msg), 201
+
 
 
 # # Update Profile Endpoint

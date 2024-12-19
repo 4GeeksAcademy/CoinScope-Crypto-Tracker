@@ -99,10 +99,8 @@ export const Profile = () => {
                             </h5>
                         </div>
 
-                        {/* Button to open modal */}
                         <button onClick={openModal} className="btn trdBtn">Update Profile</button>
 
-                        {/* Modal for Editing Profile */}
                         <Modal show={showModal} onHide={closeModal} style={{ border: "rgba(0, 0, 0, 0.5)" }}>
                             <div style={{ border: "rgba(0, 0, 0, 0.5)" }}>
                                 <Modal.Header closeButton >

@@ -114,7 +114,6 @@ export const MoreInfo = () => {
         // Set up an interval to fetch the latest price data periodically
         // const intervalId = setInterval(() => {
         setInterval(() => {
-            console.log("I work");
             actions.getCurrentCoinData();
             actions.checkAlerts();
             // actions.getCurrentCoinPriceData();
